@@ -1,15 +1,17 @@
 # Jupyter_Workshop_Winterschool_2022
 
-This is an introductory course to Jupyter Notebook / Lab.
-
+This is an introductory course to Jupyter Notebook / Lab for the gfbio
+Winterschool 2022.
 
 Requirements
-#R
+## R
 - r-base=3.6
 - r-tidyverse
 - r-raster
 - bioconductor-pcamethods
-#Python
+
+
+## Python
 - numpy
 - matplotlib
 - pandas
