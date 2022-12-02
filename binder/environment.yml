@@ -2,11 +2,6 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  #R
-  - r-base=3.6
-  - r-tidyverse
-  - r-raster
-  - bioconductor-pcamethods
   #Python
   - numpy
   - matplotlib
@@ -16,3 +11,11 @@ dependencies:
   - seaborn
   - cartopy
   - rapidfuzz
+  # R
+  - r-base=3.6.2
+  - r-tidyverse
+  - r-raster
+  - r-gdalutils
+  - r-data.table
+  - r-bit64
+  - bioconductor-pcamethods
