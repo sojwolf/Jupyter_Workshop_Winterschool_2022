@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Reuse of winter school practical course material &#8212; Jupyter Notebook Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Additional Materials" href="2.2_Additional_Materials.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebook Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started with Jupyter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.1_Jupyter_Introduction.html">
+   Introduction to Jupyter Notebook (Part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.2_R_Kernel.html">
+   Introduction to Juypter - The R kernel
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical example in Jupyter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.1_Jupyter_Data_Analysis.html">
+   Data Analysis in Jupyter Notebook (Part 2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.2_Additional_Materials.html">
+   Additional Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation and reusing material
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Reuse of winter school practical course material
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3.1_Reuse_Course_Material.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.1_Reuse_Course_Material.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/3.1_Reuse_Course_Material.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-material-and-data">
+   Get material and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reuse-options">
+   Reuse options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binderhub">
+     BinderHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-options">
+     Other options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#home-institution-jupyterlab">
+       Home institution JupyterLab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#local-computer">
+       Local computer
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-and-install-missing-requirements">
+   Find and install missing requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-an-r-kernel">
+     Installing an R kernel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-r-magic">
+     Installing R magic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repositories-of-all-tutorials">
+   Repositories of all tutorials
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reuse of winter school practical course material</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-material-and-data">
+   Get material and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reuse-options">
+   Reuse options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binderhub">
+     BinderHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-options">
+     Other options
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#home-institution-jupyterlab">
+       Home institution JupyterLab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#local-computer">
+       Local computer
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-and-install-missing-requirements">
+   Find and install missing requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-an-r-kernel">
+     Installing an R kernel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-r-magic">
+     Installing R magic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repositories-of-all-tutorials">
+   Repositories of all tutorials
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="reuse-of-winter-school-practical-course-material">
+<h1>Reuse of winter school practical course material<a class="headerlink" href="#reuse-of-winter-school-practical-course-material" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Get material and data</p></li>
+<li><p>Reuse options</p>
+<ul>
+<li><p>BinderHub</p></li>
+<li><p>Other options</p>
+<ul>
+<li><p>Home institution JupyterLab</p></li>
+<li><p>Local computer</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Find and install missing requirements</p>
+<ul>
+<li><p>Installing an R kernel</p></li>
+<li><p>Install python packages</p></li>
+</ul>
+</li>
+<li><p>Repositories of all tutorials</p></li>
+</ul>
+<p>There are different ways of reusing and continuing with the material that you get in touch with in the winter school. This document serves as a rough guide to help you get rolling after the workshop. We show how you can get the scripts and the data and how you can place it into an environment in which you can continue to play with the material. We start with the easiest solution first but also want to highlight some options which require more time and knowledge from your side.</p>
+<section id="get-material-and-data">
+<h2>Get material and data<a class="headerlink" href="#get-material-and-data" title="Permalink to this headline">#</a></h2>
+<p>First of all we need to talk about getting the material. Each tutor prepared a Git repository with all the files that are relevant for their workshop part. In there you find e.g. the scripts and folders with files including data and documentation. You can simply click on the download button in a repository to download a Git repository as a zip file to get all the content.</p>
+<p>While that provides you with most of the things you need to get going there is one caveat. GitHub does not allow us to store large files. That means that we had to put large datasets somewhere else. So that also means you need to get them from somewhere else. This is indicated during the tutorial and one example of this is the dataset of Sophie Wolf.</p>
+<p><a class="reference external" href="https://syncandshare.desy.de/index.php/s/tTLLCnzbtCCpHot">https://syncandshare.desy.de/index.php/s/tTLLCnzbtCCpHot</a></p>
+<p>That is already nice you might say. However all above gets you only the original workshop files without your modifications. So let’s see how you can preserve and work on with your own files.</p>
+<p>You can export your work (e.g. .ipynb file) from a JupyterHub by clicking on File and selecting Download.</p>
+<img align="left" src="Figures/download.png" width="900" >
+<p><strong>Interesting to know:</strong> There is not only raw file based exports available. Other processed formats include e.g. html or PDF as shown below which can be handy in some cases giving you a nicely readable representation of your research.</p>
+<img align="left" src="Figures/pdf.png" width="900" >
+</section>
+<section id="reuse-options">
+<h2>Reuse options<a class="headerlink" href="#reuse-options" title="Permalink to this headline">#</a></h2>
+<section id="binderhub">
+<h3>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">#</a></h3>
+<p>The easiest solution to continue with the material is to use the same system as we have been using. During the winter school we used a tool called BinderHub in order to enable you to work in your own JupyterLab environment including all requirements that it needed to execute the scripts properly. So what is BinderHub actually?</p>
+<p>“Have a repository full of Jupyter notebooks? With Binder, open those notebooks in an executable environment, making your code immediately reproducible by anyone, anywhere.” <em>cited from their website</em></p>
+<p>So that means the tool takes a GitHub repository and turns it into a complete JupyterLab instance to work with. All that happens in a reliable and reproducible way. On <a class="reference external" href="https://mybinder.org">https://mybinder.org</a> you can also run the things that we have shown to you during the winter school. To get going:</p>
+<ol class="simple">
+<li><p>Get the original Github-Repository URL of your tutor (see at below)</p></li>
+<li><p>Paste it into the form on BinderHub as we did in the winter school</p></li>
+<li><p>Wait for the build process and starting of the environment (takes a while)</p></li>
+<li><p>Get the modifies files (see above) upload it into the new environment</p></li>
+</ol>
+<p>Just in case you are into GitHub. You can also create a copy of the original repository and use that one for further experimentation or to base your own work on the examples. For that:</p>
+<ol class="simple">
+<li><p>Get the original Github-Repository URL of your tutor (see below)</p></li>
+<li><p>Copy the repository by creating a fork</p></li>
+<li><p>Modify your copy to your liking (e.g. add your files from the winter school)</p></li>
+<li><p>Then you copy the URL of your repository and go to step one above</p></li>
+</ol>
+</section>
+<section id="other-options">
+<h3>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">#</a></h3>
+<p>As said above there are some more options to work on with the material. However, not all might be the best way for a beginner to start with as they require some more work or a bit of technical background to set up and run.</p>
+<section id="home-institution-jupyterlab">
+<h4>Home institution JupyterLab<a class="headerlink" href="#home-institution-jupyterlab" title="Permalink to this headline">#</a></h4>
+<p>Sometimes you might be lucky and your home institution already runs a JupyterLab instance as a service for their employees. In that case you can simply ask how to get access and upload all the workshop data and the scripts to your account and you can start working with it. One thing you need to do to make the scripts work is to install additional python packages which are referenced in the scripts or special Jupyter packages which allow to run e.g. R-Code if you wish to do so. You can read the section further down or ask your IT for support.</p>
+</section>
+<section id="local-computer">
+<h4>Local computer<a class="headerlink" href="#local-computer" title="Permalink to this headline">#</a></h4>
+<p>If you want to use the workshop material on your local machine, you need to install a JupyterLab environment yourself. There are plenty of tutorials out there to do a basic setup. One would be:</p>
+<p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/getting_started/installation.html">https://jupyterlab.readthedocs.io/en/latest/getting_started/installation.html</a></p>
+<p>After installation of the environment you can open the workshop materials in your JupyterLab. For this navigate to the respective folder in your terminal and then launch Jupyter Lab like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That will make the current directory the working directory in JupyterLab and open a browser window that should look familiar to what you have seen at the winter school lessons:</p>
+<img align="left" src="Figures/launch.png"  >
+<p>One thing you need to do in order to make the scripts work is to install additional python packages which are referenced in the scripts or also install special Jupyter packages which allow to run e.g. R-Code if you wish to do so. You can read the section further down or ask your IT for support.</p>
+</section>
+</section>
+</section>
+<section id="find-and-install-missing-requirements">
+<h2>Find and install missing requirements<a class="headerlink" href="#find-and-install-missing-requirements" title="Permalink to this headline">#</a></h2>
+<p>If you go with an institutional installation of JupyterLab or with a local one you will notice that you have to install all dependencies on your own. That includes python and R packages used in the scripts as well as additional kernels which enable it to run specific code like R. Don’t worry you do not need to go through the script step by step and guess the requirements. In each of the repositories of your tutors you find a requirements file listing out what you need. You find the information either in a file in the folder named “binder”. The file itself then is called “environment.yml”. Or you find it in a file in the base folder of the repository where it is called “requirements.txt”</p>
+<p>In this example of an “environment.yml” file you can see the R and python dependencies. The R dependencies you can install via your R console followed by the python packages which you install via your preferred way of installing python packages (e.g. pip).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># binder/environment.yml
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  #R
+  - r-base=3.6
+  - r-tidyverse
+  - r-raster
+  - bioconductor-pcamethods
+  #Python
+  - numpy
+  - matplotlib
+  - pandas
+  - rpy2
+  - session-info
+  - seaborn
+  - cartopy
+  - rapidfuz`
+</pre></div>
+</div>
+<section id="installing-an-r-kernel">
+<h3>Installing an R kernel<a class="headerlink" href="#installing-an-r-kernel" title="Permalink to this headline">#</a></h3>
+<p>If you want to use an R kernel or R magic within a Python kernel, this has to be installed separately. You can install the IRkernel packages by running to the following command in an R console:</p>
+<p>install.packages(‘IRkernel’)</p>
+</section>
+<section id="installing-r-magic">
+<h3>Installing R magic<a class="headerlink" href="#installing-r-magic" title="Permalink to this headline">#</a></h3>
+<p>You can install e.g. the R magic python package by running to the following command in the terminal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rpy2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Don’t forget to initialise R magic inside your python kernel notebook for it to work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="repositories-of-all-tutorials">
+<h2>Repositories of all tutorials<a class="headerlink" href="#repositories-of-all-tutorials" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Sophie Wolf, Data analysis in Jupyter Notebooks: <a class="reference external" href="https://github.com/sojwolf/Jupyter_Workshop_Winterschool_2022">https://github.com/sojwolf/Jupyter_Workshop_Winterschool_2022</a></p></li>
+<li><p>Hanieh Saeedi <a class="reference external" href="https://git.ufz.de/winterschool/hs">https://git.ufz.de/winterschool/hs</a></p></li>
+<li><p>Michael Öllermann <a class="reference external" href="https://github.com/pangaea-data-publisher/community-workshop-material">https://github.com/pangaea-data-publisher/community-workshop-material</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2.2_Additional_Materials.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Additional Materials</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sophie Wolf<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Getting started with Jupyter
+    chapters:
+    - file: 1.1_Jupyter_Introduction
+    - file: 1.2_R_Kernel
+  - caption: Practical example in Jupyter
+    chapters:
+    - file: 2.1_Jupyter_Data_Analysis
+    - file: 2.2_Additional_Materials
+  - caption: Documentation and reusing material 
+    chapters:
+    - file: 3.1_Reuse_Course_Material
+   # - file: 3.2_Create_Jupyter_Book

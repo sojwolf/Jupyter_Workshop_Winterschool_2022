@@ -1,0 +1,1447 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Analysis in Jupyter Notebook (Part 2) &#8212; Jupyter Notebook Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Additional Materials" href="2.2_Additional_Materials.html" />
+    <link rel="prev" title="Introduction to Juypter - The R kernel" href="1.2_R_Kernel.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebook Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started with Jupyter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.1_Jupyter_Introduction.html">
+   Introduction to Jupyter Notebook (Part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.2_R_Kernel.html">
+   Introduction to Juypter - The R kernel
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical example in Jupyter
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Analysis in Jupyter Notebook (Part 2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.2_Additional_Materials.html">
+   Additional Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation and reusing material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.1_Reuse_Course_Material.html">
+   Reuse of winter school practical course material
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/2.1_Jupyter_Data_Analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2.1_Jupyter_Data_Analysis.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/2.1_Jupyter_Data_Analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-question">
+   Research question
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data">
+   The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inaturalist-citizen-science-observations">
+   iNaturalist citizen science observations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-it">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-density-of-observations">
+     Plot density of observations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-global-trait-maps">
+   Make global trait maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-global-spectrum-of-plant-form-and-function">
+   The global spectrum of plant form and function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Analysis in Jupyter Notebook (Part 2)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#research-question">
+   Research question
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data">
+   The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inaturalist-citizen-science-observations">
+   iNaturalist citizen science observations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-it">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-density-of-observations">
+     Plot density of observations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     🤖 Try it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-global-trait-maps">
+   Make global trait maps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-global-spectrum-of-plant-form-and-function">
+   The global spectrum of plant form and function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-analysis-in-jupyter-notebook-part-2">
+<h1>Data Analysis in Jupyter Notebook (Part 2)<a class="headerlink" href="#data-analysis-in-jupyter-notebook-part-2" title="Permalink to this headline">#</a></h1>
+<p>We will reproduce parts of a recent publication:</p>
+<p>Wolf, S. and Mahecha, M. D. and Sabatini, F. M. and Wirth, C. and Bruelheide, H. and Kattge, J. and Moreno Martínez, Á. and Mora, K. and Kattenborn, T., <strong>Citizen science plant observations encode global trait patterns</strong>. Nat Ecol Evol (2022). <a class="reference external" href="https://doi.org/10.1038/s41559-022-01904-x">https://doi.org/10.1038/s41559-022-01904-x</a></p>
+<p>The full documentation can found at: <a class="reference external" href="https://github.com/sojwolf/iNaturalist_traits">https://github.com/sojwolf/iNaturalist_traits</a></p>
+<section id="research-question">
+<h2>Research question<a class="headerlink" href="#research-question" title="Permalink to this headline">#</a></h2>
+<p>Can we use citizen science plant observations to map plant functional traits on a global scale?</p>
+<p>Plant traits are morphological, anatomical, physiological, biochemical and phenological characteristics of plants. They determine how a plant responds to and shapes its environment. The collective range of all traits of all plants within a plant community defines this community’s functional diversity (see Kattge et al. 2020).</p>
+<img align="left" src="Figures/Winterschool_tutorial.jpg" width="900" ></section>
+<section id="the-data">
+<h2>The Data<a class="headerlink" href="#the-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>iNaturalist - species observations</p></li>
+<li><p>TRY - plant trait measurements</p></li>
+<li><p>sPlotOpen - vegetaiton community data</p></li>
+</ul>
+</section>
+<section id="inaturalist-citizen-science-observations">
+<h2>iNaturalist citizen science observations<a class="headerlink" href="#inaturalist-citizen-science-observations" title="Permalink to this headline">#</a></h2>
+<p>For this workshop we will use the following download: <a class="reference external" href="http://GBIF.org">GBIF.org</a> (4 January 2022) GBIF Occurrence Download <a class="reference external" href="https://doi.org/10.15468/dl.34tjre">https://doi.org/10.15468/dl.34tjre</a></p>
+<p>For future reference, if you would like to use the most recent data: Follow the above link and click <strong>‘Rerun Query’</strong> and proceed to download. For this analysis the ‘simple’ version is sufficient.</p>
+<section id="try-it">
+<h3>🤖 Try it!<a class="headerlink" href="#try-it" title="Permalink to this headline">#</a></h3>
+<p><strong>Take a few minutes to explore iNaturalist “research-grade” dataset on <a class="reference external" href="http://www.gbif.org">www.gbif.org</a>.</strong></p>
+<p><strong>1. How is “research-grade” defined in the iNaturalist dataset?</strong></p>
+<p><strong>2. Rerun the query - how many vascular plant observations are in the iNaturalist “research-grade” dataset to date?</strong></p>
+<p>For this tutorial, the following dataframe is already preprocessed a bit. Only the following columns were extracted and we will disregard subspecies level: the species names contain only genus and species.</p>
+<ul class="simple">
+<li><p>gbifID</p></li>
+<li><p>scientificName</p></li>
+<li><p>decimalLatitude</p></li>
+<li><p>decimalLongitude</p></li>
+<li><p>eventDate</p></li>
+<li><p>dateIdentified</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue">Data</span>/
+<span class=" -Color -Color-Blue">Figures</span>/
+README.md
+Winterschool_2022_Additional_Materials.ipynb
+Winterschool_2022_Jupyter_Data_Analysis.ipynb
+Winterschool_2022_Jupyter_Introduction.ipynb
+Winterschool_2022_R_Kernel.ipynb
+<span class=" -Color -Color-Blue">binder</span>/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># for handling dataframes in python</span>
+
+<span class="n">iNat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Data/iNat/observations.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iNat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>🤖 Try it!<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><strong>1. How many observations does this dataset contain?</strong></p>
+<p><strong>2. How many unique species?</strong></p>
+<p><strong>3. The number of observations per unique species is highly squewed. Most species are rare and few are common. Plot a histogramm showing this frequency distribution of species.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of observations in dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of unique species</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of species frequencies</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="plot-density-of-observations">
+<h3>Plot density of observations<a class="headerlink" href="#plot-density-of-observations" title="Permalink to this headline">#</a></h3>
+<p>One version of plotting the density, is by aggregating the iNaturalist observations in hexagonal bins and count the number of observations per hexagon. The function <code class="docutils literal notranslate"><span class="pre">hexbin</span></code> provides this functionality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># main Python plotting library </span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1"># pretty plots</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span> <span class="c1"># maps </span>
+
+<span class="k">def</span> <span class="nf">hexmap</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="c1"># hexbin aggregates observations in hexagonal bins and plots the density</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span><span class="n">long</span><span class="p">,</span>
+          <span class="n">lat</span><span class="p">,</span> 
+          <span class="n">mincnt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># min. nuber of observations per hexagon </span>
+          <span class="n">gridsize</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="c1"># bin size</span>
+          <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;cool&quot;</span><span class="p">,</span> 
+          <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> 
+          <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
+          <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    
+    <span class="c1"># add coastline outline and extent of map:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">hb</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Apply the <code class="docutils literal notranslate"><span class="pre">hexmap</span></code> function to our iNaturalist observations and save output as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#determine figure size</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">hexmap</span><span class="p">(</span><span class="n">iNat</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">],</span> <span class="n">iNat</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">],</span> <span class="s2">&quot;Number of iNatrualist Observations&quot;</span><span class="p">)</span>
+
+<span class="c1">#optional: Save figure</span>
+<span class="c1">#plt.savefig(&#39;iNat_density_hex.pdf&#39;, bbox_inches=&#39;tight&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2.1_Jupyter_Data_Analysis_24_0.png" src="_images/2.1_Jupyter_Data_Analysis_24_0.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>🤖 Try it!<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p><strong>The frquency distribution of observations seems to be skewed. Change the color bar to log-scale.</strong></p>
+<p>Hint: Look up <code class="docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.hexbin</span></code>.</p>
+<hr class="docutils" />
+<p>A second plotting option is to grid the data into a latitude/longitude grid. Then we can project our map onto a more realistic representation of the spherical Earth, such as the Robinson projection. The previously used <code class="docutils literal notranslate"><span class="pre">hexbin</span></code> function does not have a reprojection functionality implemented.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LogNorm</span><span class="p">,</span> <span class="n">Normalize</span><span class="p">,</span> <span class="n">BoundaryNorm</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span> <span class="c1"># maps</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">gridmap</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">})</span>
+
+    <span class="n">Z</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">long</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+                                   <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lat</span><span class="p">),</span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">181</span><span class="p">,</span> <span class="mi">91</span><span class="p">])</span>
+
+    <span class="c1">#https://stackoverflow.com/questions/67801227/color-a-2d-histogram-not-by-density-but-by-the-mean-of-a-third-column</span>
+    <span class="c1">#https://medium.com/analytics-vidhya/custom-strava-heatmap-231267dcd084</span>
+    
+    <span class="c1">#let function know what projection provided data is in:</span>
+    <span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    
+    <span class="c1">#for colorbar</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>
+    <span class="n">im_ratio</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1">#plot map</span>
+    <span class="c1">#create base plot of a world map</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span> <span class="c1"># I used the PlateCarree projection from cartopy</span>
+    
+    <span class="c1"># set figure to map global extent (-180,180,-90,90)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+
+    
+    <span class="c1">#add grid with values</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;cool&quot;</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">(),</span> <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">)</span>
+    
+    <span class="c1">#add coastlines</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.3</span><span class="p">)</span>
+    
+    <span class="c1">#add color bar</span>
+    <span class="k">if</span> <span class="n">colorbar</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="o">*</span><span class="n">im_ratio</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Apply the <code class="docutils literal notranslate"><span class="pre">gridmap</span></code> function to our iNaturalist observations and save output as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>. You can also experiment with other projections. See <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html</a> for inspiration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="n">gridmap</span><span class="p">(</span><span class="n">iNat</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">],</span> <span class="n">iNat</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">],</span> <span class="s2">&quot;Number of iNatrualist Observations&quot;</span><span class="p">,</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Robinson</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1">#Optional</span>
+<span class="c1">#plt.savefig(&#39;/Figures/iNat_density_Robinson.pdf&#39;, bbox_inches=&#39;tight&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2.1_Jupyter_Data_Analysis_30_0.png" src="_images/2.1_Jupyter_Data_Analysis_30_0.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>🤖 Try it!<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><strong>Take a few minutes to play around with this function:</strong></p>
+<p><strong>1. Change the projection of the map.</strong> Hint: Look up “cartopy ccrs projections”.</p>
+<p><strong>2. Change the colors of the map.</strong></p>
+<p><strong>Extra credit: Filter the iNaturalist dataset for a species of your interest and plot its global distribution as documented by citizen scientists.</strong> Hint:</p>
+<p>To subset df: <code class="docutils literal notranslate"><span class="pre">df[df['column_name']==&quot;your</span> <span class="pre">species</span> <span class="pre">name&quot;]</span></code></p>
+<p>Get list of 10 most common species: <code class="docutils literal notranslate"><span class="pre">iNat['scientificName'].value_counts()[:10].index.tolist()</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="make-global-trait-maps">
+<h2>Make global trait maps<a class="headerlink" href="#make-global-trait-maps" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enables the %%R magic, needs to be installed and then activated only once per Notebook </span>
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+# Load iNat Data
+iNat &lt;- data.table::fread(&#39;Data/iNat_TRY_log.csv&#39;, data.table=F, showProgress=F)
+gc()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">R</span> head(iNat)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gbifID</th>
+      <th>scientificName</th>
+      <th>decimalLatitude</th>
+      <th>decimalLongitude</th>
+      <th>eventDate</th>
+      <th>dateIdentified</th>
+      <th>Dispersal.unit.length</th>
+      <th>Leaf.Area</th>
+      <th>SLA</th>
+      <th>Leaf.C</th>
+      <th>...</th>
+      <th>Leaf.delta15N</th>
+      <th>Leaf.N.P.ratio</th>
+      <th>Leaf.P</th>
+      <th>Plant.Height</th>
+      <th>Seed.mass</th>
+      <th>Seed.length</th>
+      <th>Seeds.per.rep..unit</th>
+      <th>Stem.conduit.density</th>
+      <th>SSD</th>
+      <th>Conduit.element.length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1.229615e+09</td>
+      <td>Commelina communis</td>
+      <td>35.987483</td>
+      <td>-79.057546</td>
+      <td>2013-07-07T00:00:00</td>
+      <td>2013-07-07T20:33:11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.384000e+09</td>
+      <td>Commelina communis</td>
+      <td>42.093762</td>
+      <td>-75.923660</td>
+      <td>2021-08-23T13:06:06</td>
+      <td>2021-09-17T21:15:37</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.807277e+09</td>
+      <td>Commelina communis</td>
+      <td>40.787636</td>
+      <td>-73.933728</td>
+      <td>2017-09-04T12:47:58</td>
+      <td>2017-09-04T21:58:57</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.355124e+09</td>
+      <td>Commelina communis</td>
+      <td>39.643158</td>
+      <td>-76.764245</td>
+      <td>2020-08-26T10:19:56</td>
+      <td>2020-08-27T13:21:22</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.802639e+09</td>
+      <td>Commelina communis</td>
+      <td>43.109505</td>
+      <td>1.622543</td>
+      <td>2017-10-21T10:01:00</td>
+      <td>2017-10-21T09:02:42</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.898807e+09</td>
+      <td>Commelina communis</td>
+      <td>40.716092</td>
+      <td>-73.955880</td>
+      <td>2018-08-19T09:25:41</td>
+      <td>2018-08-19T13:35:18</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>2.5362</td>
+      <td>0.536493</td>
+      <td>NaN</td>
+      <td>2.13771</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>6 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+library(raster)
+
+# get coordinates
+xy &lt;- cbind(iNat$decimalLongitude, iNat$decimalLatitude)
+# raster dimensions 2 degree resolution map
+r2 &lt;- raster(ncols = 180, nrows = 90)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: sp
+
+R[write to console]: code for methods in class “Rcpp_SpatCategories” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatCategories” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatDataFrame” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatDataFrame” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatFactor” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatFactor” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatMessages” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatMessages” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatOptions” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatOptions” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRaster” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRaster” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRasterCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRasterCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRasterStack” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatRasterStack” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatSRS” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatSRS” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatTime_v” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatTime_v” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVector” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVector” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVectorCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVectorCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVectorProxy” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpatVectorProxy” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPoly” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPoly” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPolyPart” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPolyPart” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPolygons” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+
+R[write to console]: code for methods in class “Rcpp_SpPolygons” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+loop.vector &lt;- 7:24 # loop over trait columns in dataframe
+loop.vector
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1]  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+# export exp(ln()) maps in GeoTiff format
+
+for (i in loop.vector) { # Loop over loop.vector
+    vals &lt;- iNat[,i]
+    name &lt;- colnames(iNat[i])
+    # create a raster of all data and aggregate all observations as mean
+    raster2 &lt;- rasterize(xy, r2, vals, fun = mean)
+    raster2[is.infinite(raster2)] &lt;- NA
+    crs(raster2) &lt;- &quot;+proj=longlat&quot; #set projection
+    
+    # plot raster to check output
+    plot(raster2, main=name)
+    
+    # write raster to GeoTiff
+    filename = paste(name, &quot;_iNat_2deg_ln.tif&quot;, sep=&quot;&quot;)
+    writeRaster(raster2, filename, overwrite=TRUE)
+
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_0.png" src="_images/2.1_Jupyter_Data_Analysis_39_0.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_1.png" src="_images/2.1_Jupyter_Data_Analysis_39_1.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_2.png" src="_images/2.1_Jupyter_Data_Analysis_39_2.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_3.png" src="_images/2.1_Jupyter_Data_Analysis_39_3.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_4.png" src="_images/2.1_Jupyter_Data_Analysis_39_4.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_5.png" src="_images/2.1_Jupyter_Data_Analysis_39_5.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_6.png" src="_images/2.1_Jupyter_Data_Analysis_39_6.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_7.png" src="_images/2.1_Jupyter_Data_Analysis_39_7.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_8.png" src="_images/2.1_Jupyter_Data_Analysis_39_8.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_9.png" src="_images/2.1_Jupyter_Data_Analysis_39_9.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_10.png" src="_images/2.1_Jupyter_Data_Analysis_39_10.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_11.png" src="_images/2.1_Jupyter_Data_Analysis_39_11.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_12.png" src="_images/2.1_Jupyter_Data_Analysis_39_12.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_13.png" src="_images/2.1_Jupyter_Data_Analysis_39_13.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_14.png" src="_images/2.1_Jupyter_Data_Analysis_39_14.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_15.png" src="_images/2.1_Jupyter_Data_Analysis_39_15.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_16.png" src="_images/2.1_Jupyter_Data_Analysis_39_16.png" />
+<img alt="_images/2.1_Jupyter_Data_Analysis_39_17.png" src="_images/2.1_Jupyter_Data_Analysis_39_17.png" />
+</div>
+</div>
+</section>
+<section id="the-global-spectrum-of-plant-form-and-function">
+<h2>The global spectrum of plant form and function<a class="headerlink" href="#the-global-spectrum-of-plant-form-and-function" title="Permalink to this headline">#</a></h2>
+<p><strong>a)</strong> Díaz et al. 2016</p>
+<img align="left" src="Figures/Diaz_2016_spectrum.png" width="600" >
+<p><strong>b)</strong> Bruelheide et al. 2018</p>
+<img align="left" src="Figures/Bruelheide_2018_spectrum.png" width="600" >
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+files &lt;- list.files(path=&quot;.&quot;, pattern=&quot;_iNat_2deg_ln.tif&quot;, all.files=FALSE, full.names=TRUE, recursive=TRUE)
+s &lt;- stack(files)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+files
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1] &quot;./Conduit.element.length_iNat_2deg_ln.tif&quot;
+ [2] &quot;./Dispersal.unit.length_iNat_2deg_ln.tif&quot; 
+ [3] &quot;./LDMC_iNat_2deg_ln.tif&quot;                  
+ [4] &quot;./Leaf.Area_iNat_2deg_ln.tif&quot;             
+ [5] &quot;./Leaf.C_iNat_2deg_ln.tif&quot;                
+ [6] &quot;./Leaf.delta15N_iNat_2deg_ln.tif&quot;         
+ [7] &quot;./Leaf.fresh.mass_iNat_2deg_ln.tif&quot;       
+ [8] &quot;./Leaf.N.P.ratio_iNat_2deg_ln.tif&quot;        
+ [9] &quot;./Leaf.N.per.area_iNat_2deg_ln.tif&quot;       
+[10] &quot;./Leaf.N.per.mass_iNat_2deg_ln.tif&quot;       
+[11] &quot;./Leaf.P_iNat_2deg_ln.tif&quot;                
+[12] &quot;./Plant.Height_iNat_2deg_ln.tif&quot;          
+[13] &quot;./Seed.length_iNat_2deg_ln.tif&quot;           
+[14] &quot;./Seed.mass_iNat_2deg_ln.tif&quot;             
+[15] &quot;./Seeds.per.rep..unit_iNat_2deg_ln.tif&quot;   
+[16] &quot;./SLA_iNat_2deg_ln.tif&quot;                   
+[17] &quot;./SSD_iNat_2deg_ln.tif&quot;                   
+[18] &quot;./Stem.conduit.density_iNat_2deg_ln.tif&quot;  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+trait_names &lt;- c(files)
+trait_names &lt;- gsub(&quot;*_iNat_2deg_ln.tif&quot;, &quot;&quot;, trait_names)
+trait_names &lt;- gsub(&quot;.*./&quot;, &quot;&quot;, trait_names)
+
+names(s) &lt;- trait_names
+s
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class      : RasterStack 
+dimensions : 90, 180, 16200, 18  (nrow, ncol, ncell, nlayers)
+resolution : 2, 2  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : NA 
+names      : Conduit.element.length, Dispersal.unit.length,       LDMC,  Leaf.Area,     Leaf.C, Leaf.delta15N, Leaf.fresh.mass, Leaf.N.P.ratio, Leaf.N.per.area, Leaf.N.per.mass,     Leaf.P, Plant.Height, Seed.length,  Seed.mass, Seeds.per.rep..unit, ... 
+min values :              5.0282569,            -5.6549921, -2.9296312,  0.6265936,  5.5286350,    -3.9120231,      -6.7456365,      1.1907276,      -1.2943509,       1.5475625, -1.9557816,   -3.6935570,  -2.3025851, -6.3584490,           0.0000000, ... 
+max values :              7.2274203,             3.5189805, -0.4491783, 11.2158442,  6.4358296,     2.6623552,       3.6270041,      4.2953291,       3.9186676,       4.0655332,  1.8614928,    4.2484951,   4.0943446, 13.2652512,          19.5192928, ... 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+df = as.data.frame(s)
+head(df, 3)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Conduit.element.length Dispersal.unit.length LDMC Leaf.Area Leaf.C
+1                     NA                    NA   NA        NA     NA
+2                     NA                    NA   NA        NA     NA
+3                     NA                    NA   NA        NA     NA
+  Leaf.delta15N Leaf.fresh.mass Leaf.N.P.ratio Leaf.N.per.area Leaf.N.per.mass
+1            NA              NA             NA              NA              NA
+2            NA              NA             NA              NA              NA
+3            NA              NA             NA              NA              NA
+  Leaf.P Plant.Height Seed.length Seed.mass Seeds.per.rep..unit SLA SSD
+1     NA           NA          NA        NA                  NA  NA  NA
+2     NA           NA          NA        NA                  NA  NA  NA
+3     NA           NA          NA        NA                  NA  NA  NA
+  Stem.conduit.density
+1                   NA
+2                   NA
+3                   NA
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+ 
+summary(df)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Conduit.element.length Dispersal.unit.length      LDMC          Leaf.Area     
+ Min.   :5.028          Min.   :-5.655        Min.   :-2.930   Min.   : 0.627  
+ 1st Qu.:5.659          1st Qu.: 0.793        1st Qu.:-1.519   1st Qu.: 5.791  
+ Median :5.881          Median : 1.035        Median :-1.395   Median : 6.663  
+ Mean   :5.875          Mean   : 0.976        Mean   :-1.375   Mean   : 6.607  
+ 3rd Qu.:6.093          3rd Qu.: 1.218        3rd Qu.:-1.227   3rd Qu.: 7.488  
+ Max.   :7.227          Max.   : 3.519        Max.   :-0.449   Max.   :11.216  
+ NA&#39;s   :13890          NA&#39;s   :13382         NA&#39;s   :12914    NA&#39;s   :12820   
+     Leaf.C      Leaf.delta15N    Leaf.fresh.mass  Leaf.N.P.ratio 
+ Min.   :5.529   Min.   :-3.912   Min.   :-6.746   Min.   :1.191  
+ 1st Qu.:6.071   1st Qu.: 0.193   1st Qu.:-2.367   1st Qu.:2.348  
+ Median :6.096   Median : 0.834   Median :-1.638   Median :2.478  
+ Mean   :6.098   Mean   : 0.748   Mean   :-1.581   Mean   :2.512  
+ 3rd Qu.:6.126   3rd Qu.: 1.281   3rd Qu.:-0.941   3rd Qu.:2.665  
+ Max.   :6.436   Max.   : 2.662   Max.   : 3.627   Max.   :4.295  
+ NA&#39;s   :12874   NA&#39;s   :13495    NA&#39;s   :13727    NA&#39;s   :12888  
+ Leaf.N.per.area  Leaf.N.per.mass     Leaf.P        Plant.Height   
+ Min.   :-1.294   Min.   :1.548   Min.   :-1.956   Min.   :-3.694  
+ 1st Qu.: 0.202   1st Qu.:2.961   1st Qu.: 0.358   1st Qu.:-0.637  
+ Median : 0.368   Median :3.078   Median : 0.562   Median :-0.033  
+ Mean   : 0.419   Mean   :3.059   Mean   : 0.515   Mean   : 0.137  
+ 3rd Qu.: 0.559   3rd Qu.:3.184   3rd Qu.: 0.714   3rd Qu.: 1.016  
+ Max.   : 3.919   Max.   :4.066   Max.   : 1.861   Max.   : 4.248  
+ NA&#39;s   :12770    NA&#39;s   :12632   NA&#39;s   :12710    NA&#39;s   :12469   
+  Seed.length       Seed.mass      Seeds.per.rep..unit      SLA       
+ Min.   :-2.303   Min.   :-6.358   Min.   : 0.000      Min.   :0.120  
+ 1st Qu.: 0.557   1st Qu.: 0.235   1st Qu.: 6.374      1st Qu.:2.523  
+ Median : 0.755   Median : 1.138   Median : 7.872      Median :2.777  
+ Mean   : 0.809   Mean   : 1.495   Mean   : 7.692      Mean   :2.715  
+ 3rd Qu.: 0.953   3rd Qu.: 2.520   3rd Qu.: 8.945      3rd Qu.:3.003  
+ Max.   : 4.094   Max.   :13.265   Max.   :19.519      Max.   :5.250  
+ NA&#39;s   :13455    NA&#39;s   :12458    NA&#39;s   :14146       NA&#39;s   :12628  
+      SSD         Stem.conduit.density
+ Min.   :-3.612   Min.   :0.313       
+ 1st Qu.:-1.307   1st Qu.:3.195       
+ Median :-0.927   Median :4.463       
+ Mean   :-0.977   Mean   :4.407       
+ 3rd Qu.:-0.604   3rd Qu.:5.590       
+ Max.   : 0.115   Max.   :8.158       
+ NA&#39;s   :13003    NA&#39;s   :13337       
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+library(pcaMethods)
+
+# convert back to original dimensions
+df_exp &lt;- exp(df)
+
+# remove rows where all are NA
+df_exp &lt;- df_exp[rowSums(is.na(df_exp)) != ncol(df_exp), ]
+
+# scale all variables
+df_st &lt;- scale(df_exp)
+
+# calculate probobalistic pca
+result &lt;- pca(df_st, method=&quot;ppca&quot;, nPcs=2) #includes a mean tranform
+scores &lt;- scores(result)
+loadings &lt;- loadings(result)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: Biobase
+
+R[write to console]: Loading required package: BiocGenerics
+
+R[write to console]: 
+Attaching package: ‘BiocGenerics’
+
+
+R[write to console]: The following objects are masked from ‘package:raster’:
+
+    as.data.frame, intersect, match, union, unique, which.max,
+    which.min
+
+
+R[write to console]: The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+
+R[write to console]: The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+    dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+    union, unique, unsplit, which.max, which.min
+
+
+R[write to console]: Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    &#39;browseVignettes()&#39;. To cite Bioconductor, see
+    &#39;citation(&quot;Biobase&quot;)&#39;, and for packages &#39;citation(&quot;pkgname&quot;)&#39;.
+
+
+R[write to console]: 
+Attaching package: ‘pcaMethods’
+
+
+R[write to console]: The following object is masked from ‘package:stats’:
+
+    loadings
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+result
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ppca calculated PCA
+Importance of component(s):
+                 PC1    PC2
+R2            0.2938 0.1416
+Cumulative R2 0.2938 0.4354
+18 	Variables
+3848 	Samples
+13262 	NAs ( 19.147 %)
+2 	Calculated component(s)
+Data was mean centered before running PCA 
+Data was NOT scaled before running PCA 
+Scores structure:
+[1] 3848    2
+Loadings structure:
+[1] 18  2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+biplot(result,  xlabs = rep(&quot;.&quot;, nrow(df_st)), xlim=c(-0.07, 0.10), ylim=c(-0.06, 0.065), cex=0.7, col=c(&#39;grey&#39;, &#39;red&#39;))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2.1_Jupyter_Data_Analysis_51_0.png" src="_images/2.1_Jupyter_Data_Analysis_51_0.png" />
+</div>
+</div>
+<section id="id4">
+<h3>🤖 Try it!<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p><strong>1. Optimize this biplot to make it more ledgible. Use R or use <code class="docutils literal notranslate"><span class="pre">%Rget</span></code> to use the results with Python.</strong></p>
+<p><strong>2. Plot the variance explained by each principle component. The code above calculates only the first two, you might want to change this.</strong></p>
+<p><strong>3. This PCA represents the so-called spectrum of plant form and function. Compare your biplot visually to the the previously published versions based a) on only TRY trait data and b) sPlotOpen community data (see figures above).</strong></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1.2_R_Kernel.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to Juypter - The R kernel</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2.2_Additional_Materials.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Additional Materials</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sophie Wolf<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

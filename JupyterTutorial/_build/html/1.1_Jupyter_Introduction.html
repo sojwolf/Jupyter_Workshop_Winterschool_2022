@@ -1,0 +1,2090 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Jupyter Notebook (Part 1) &#8212; Jupyter Notebook Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Juypter - The R kernel" href="1.2_R_Kernel.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebook Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started with Jupyter
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to Jupyter Notebook (Part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.2_R_Kernel.html">
+   Introduction to Juypter - The R kernel
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practical example in Jupyter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.1_Jupyter_Data_Analysis.html">
+   Data Analysis in Jupyter Notebook (Part 2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.2_Additional_Materials.html">
+   Additional Materials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Documentation and reusing material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.1_Reuse_Course_Material.html">
+   Reuse of winter school practical course material
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/1.1_Jupyter_Introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1.1_Jupyter_Introduction.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/1.1_Jupyter_Introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-notebook">
+   Creating a new notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-orientation">
+   First orientation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-it">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordering-of-executions">
+   Ordering of executions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-remarks-on-markdown">
+   A few remarks on Markdown
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-functions">
+     Some functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-magic-and-cell-magic">
+   Line magic and cell magic
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bash-command">
+     bash command
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-plots">
+   Visualize plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#execution-time">
+   Execution time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#look-up-documentation">
+   Look up documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes">
+   Dataframes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-r-within-a-python-juypter-notebook">
+   Using R within a Python Juypter notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-magic">
+     R Magic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move-variables-from-python-environment-to-r-and-vice-versa">
+     Move variables from Python environment to R, and vice versa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-notebook-using-an-r-kernel">
+     Create a new notebook using an R kernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example-with-vegetation-data">
+   Practical example with vegetation data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splotopen">
+     sPlotOpen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-your-notebook">
+   Export your notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements-packages-used-in-session">
+   Requirements / Packages used in session
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Jupyter Notebook (Part 1)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-notebook">
+   Creating a new notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-orientation">
+   First orientation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-it">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordering-of-executions">
+   Ordering of executions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-few-remarks-on-markdown">
+   A few remarks on Markdown
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-functions">
+     Some functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-magic-and-cell-magic">
+   Line magic and cell magic
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bash-command">
+     bash command
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-plots">
+   Visualize plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#execution-time">
+   Execution time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#look-up-documentation">
+   Look up documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes">
+   Dataframes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-r-within-a-python-juypter-notebook">
+   Using R within a Python Juypter notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-magic">
+     R Magic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move-variables-from-python-environment-to-r-and-vice-versa">
+     Move variables from Python environment to R, and vice versa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-notebook-using-an-r-kernel">
+     Create a new notebook using an R kernel
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-example-with-vegetation-data">
+   Practical example with vegetation data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splotopen">
+     sPlotOpen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-your-notebook">
+   Export your notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     🤖 Try it!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements-packages-used-in-session">
+   Requirements / Packages used in session
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-jupyter-notebook-part-1">
+<h1>Introduction to Jupyter Notebook (Part 1)<a class="headerlink" href="#introduction-to-jupyter-notebook-part-1" title="Permalink to this headline">#</a></h1>
+<p><em>gfbio Winterschool 2022, Sophie Wolf</em></p>
+<p>Jupyter refers to <strong>Ju</strong>lia, <strong>Py</strong>thon and <strong>R</strong></p>
+<p>Jupyter Notebook (formerly IPython Notebooks) is a web-based open-source interactive computational environment.</p>
+<hr class="docutils" />
+<p>A notbook contains a list of input and output cells, which can contain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Text formatted with <strong>Markdown</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Display plot in notebook&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.1_Jupyter_Introduction_5_0.png" src="_images/1.1_Jupyter_Introduction_5_0.png" />
+</div>
+</div>
+<section id="creating-a-new-notebook">
+<h2>Creating a new notebook<a class="headerlink" href="#creating-a-new-notebook" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Kernels</p></li>
+</ul>
+<p>We will be using Python 3 and R kernels.</p>
+</section>
+<section id="first-orientation">
+<h2>First orientation<a class="headerlink" href="#first-orientation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>user interface tour</p></li>
+<li><p>command mode and edit mode</p></li>
+<li><p>keyboard shortcuts</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Winterschool 2022&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Winterschool 2022
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Winterschool 2022&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Winterschool 2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Winterschool 2022&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Winterschool 2022&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supress output using <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Winterschool 2023&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="try-it">
+<h3>🤖 Try it!<a class="headerlink" href="#try-it" title="Permalink to this headline">#</a></h3>
+<p><strong>Take a few minutes to explore the keyboard shortcuts.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ordering-of-executions">
+<h2>Ordering of executions<a class="headerlink" href="#ordering-of-executions" title="Permalink to this headline">#</a></h2>
+<p>Be mindful: You can execute Jupyter cells in any order.
+The execution order is displayed as numbers to the left of each code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Nepeta cataria&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Theobroma cacao&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="o">=</span> <span class="s2">&quot;Theobroma cacao&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-few-remarks-on-markdown">
+<h2>A few remarks on Markdown<a class="headerlink" href="#a-few-remarks-on-markdown" title="Permalink to this headline">#</a></h2>
+<p>Markdown is a simple markup language for creating formatted text using a plain-text editor.</p>
+<hr class="docutils" />
+<section id="some-functions">
+<h3>Some functions<a class="headerlink" href="#some-functions" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>italics</em></p></li>
+<li><p><strong>bold</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">block</span> <span class="pre">here</span></code></p></li>
+</ul>
+<p>You can create things like this nice table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Some traits in TRY database</p></th>
+<th class="text-align:center head"><p>ID</p></th>
+<th class="text-align:right head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Leaf area (in case of compound leaves: leaflet, undefined if petiole is in- or excluded)</p></td>
+<td class="text-align:center"><p>3113</p></td>
+<td class="text-align:right"><p>mm<sup>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or excluded)</p></td>
+<td class="text-align:center"><p>3117</p></td>
+<td class="text-align:right"><p>m<sup>2</sup>/kg</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Stem specific density (SSD) or wood density (stem dry mass per stem fresh volume)</p></td>
+<td class="text-align:center"><p>4</p></td>
+<td class="text-align:right"><p>g/cm<sup>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Leaf carbon (C) content per leaf dry mass</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:right"><p>mg/g</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Leaf nitrogen (N) content per leaf dry mass</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:right"><p>mg/g</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Leaf phosphorus (P) content per leaf dry mass</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:right"><p>mg/g</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Plant height vegetative</p></td>
+<td class="text-align:center"><p>3106</p></td>
+<td class="text-align:right"><p>m</p></td>
+</tr>
+</tbody>
+</table>
+<p>Or insert an image from your local machine or url.</p>
+<p><img alt="iNaturalist observation: Fouquieria splendens" src="https://inaturalist-open-data.s3.amazonaws.com/photos/513109/original.jpg?1444266311" /></p>
+<p>This image is a citizen science observation from the project iNaturalist.</p>
+</section>
+</section>
+<section id="line-magic-and-cell-magic">
+<h2>Line magic and cell magic<a class="headerlink" href="#line-magic-and-cell-magic" title="Permalink to this headline">#</a></h2>
+<p>Jupyter has a whole library of so-called line or cell magic. These allow you to switch to other programming languages within on single Jupyter notebook.</p>
+<section id="bash-command">
+<h3>bash command<a class="headerlink" href="#bash-command" title="Permalink to this headline">#</a></h3>
+<p>To access the terminal simply use an <code class="docutils literal notranslate"><span class="pre">!</span></code> before your bash command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sophiewolf/Documents/GitHub/Jupyter_Workshop_Winterschool_2022
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example, you could use it to install a new package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install tqdm
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many in-built options for line and cell magics. They always start with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> for line magic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%%</span></code> for cell magic</p></li>
+</ul>
+<p>To list all the built-in available magic commands type the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cat  %cd  %clear  %colors  %conda  %config  %connect_info  %cp  %debug  %dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %lf  %lk  %ll  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %lx  %macro  %magic  %man  %matplotlib  %mkdir  %more  %mv  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %rm  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Line magic</strong> refers only to the one line. So all code before and after this line within the same cell will be interpreted as the kernel language, in our case Python 3. There are many bash line magic commands, such as <code class="docutils literal notranslate"><span class="pre">%ls</span></code> or <code class="docutils literal notranslate"><span class="pre">%pwd</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi! I&#39;m Python code.&quot;</span><span class="p">)</span>
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;And I&#39;m bash script.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue">Data</span>/
+<span class=" -Color -Color-Blue">Figures</span>/
+README.md
+Winterschool_2022_Additional_Materials.ipynb
+Winterschool_2022_Jupyter_Data_Analysis.ipynb
+Winterschool_2022_Jupyter_Introduction.ipynb
+Winterschool_2022_R_Kernel.ipynb
+requirements.txt
+Hi! I&#39;m Python code.
+And I&#39;m bash script.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Cell magic</strong> applies to the whole cell, so all code will be interpreted in reference to the magic command. As a result, the following command will generate an error. Cell magic must always be placed at the top of the cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+ls
+echo &quot;Hi! I&#39;m bash script.&quot;
+print(&quot;And I&#39;m Python code.&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data
+Figures
+README.md
+Winterschool_2022_Additional_Materials.ipynb
+Winterschool_2022_Jupyter_Data_Analysis.ipynb
+Winterschool_2022_Jupyter_Introduction.ipynb
+Winterschool_2022_R_Kernel.ipynb
+requirements.txt
+Hi! I&#39;m bash script.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bash: line 4: syntax error near unexpected token `&quot;And I&#39;m Python code.&quot;&#39;
+bash: line 4: `print(&quot;And I&#39;m Python code.&quot;)&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">ls</span><span class="se">\n</span><span class="s1">echo &quot;Hi! I</span><span class="se">\&#39;</span><span class="s1">m bash script.&quot;</span><span class="se">\n</span><span class="s1">print(&quot;And I</span><span class="se">\&#39;</span><span class="s1">m Python code.&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/miniforge3/envs/winterschool/lib/python3.8/site-packages/IPython/core/interactiveshell.py:2417,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2415</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2416</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2417</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2418</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/miniforge3/envs/winterschool/lib/python3.8/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/miniforge3/envs/winterschool/lib/python3.8/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;\nls\necho &quot;Hi! I\&#39;m bash script.&quot;\nprint(&quot;And I\&#39;m Python code.&quot;)\n&#39;&#39; returned non-zero exit status 2.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since Jupyter cells can be executed in any order, you might need to check your notebooks variables. The following commands can be very useful:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># current variable names</span>
+
+<span class="o">%</span><span class="k">who</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plt	 species	 title	 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># current variables, incl. type and data</span>
+
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable   Type      Data/Info
+------------------------------
+plt        module    &lt;module &#39;matplotlib.pyplo&lt;...&gt;es/matplotlib/pyplot.py&#39;&gt;
+species    str       Theobroma cacao
+title      str       Winterschool 2022
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remove a specific variable from environment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset_selective</span> species
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remove all variables from environment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Once deleted, variables cannot be recovered. Proceed (y/[n])? n
+Nothing done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>How to embed a video:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;700&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> 
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/HW29067qVWk&quot;</span>
+    <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+    <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="700" height="500" 
+    src="https://www.youtube.com/embed/HW29067qVWk"
+    frameborder="0"
+    allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="id1">
+<h3>🤖 Try it!<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><strong>Take a few minutes to play around with the line and cell magic commands. Create some variables and remove them again.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="visualize-plots">
+<h2>Visualize plots<a class="headerlink" href="#visualize-plots" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example from matplotlib documentation</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># arrays and such</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># plotting</span>
+
+<span class="c1"># Fixing random state for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># 0 to 15 point radii</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.1_Jupyter_Introduction_46_0.png" src="_images/1.1_Jupyter_Introduction_46_0.png" />
+</div>
+</div>
+</section>
+<section id="execution-time">
+<h2>Execution time<a class="headerlink" href="#execution-time" title="Permalink to this headline">#</a></h2>
+<p>If you want to test the speed of your code, the <code class="docutils literal notranslate"><span class="pre">%%time</span></code> magic can be very useful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.1_Jupyter_Introduction_49_0.png" src="_images/1.1_Jupyter_Introduction_49_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 57.1 ms, sys: 4.01 ms, total: 61.1 ms
+Wall time: 59.2 ms
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="look-up-documentation">
+<h2>Look up documentation<a class="headerlink" href="#look-up-documentation" title="Permalink to this headline">#</a></h2>
+<p>If you want to check the documentation of the function you want to use, simply click inside the function and press <code class="docutils literal notranslate"><span class="pre">Shift+Tab</span></code>. Or, if that doesn’t help, look it up using your favorite search engine!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.1_Jupyter_Introduction_52_0.png" src="_images/1.1_Jupyter_Introduction_52_0.png" />
+</div>
+</div>
+</section>
+<section id="dataframes">
+<h2>Dataframes<a class="headerlink" href="#dataframes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1">#handles dataframes in Python</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1">#arrays and such in Python</span>
+
+<span class="c1"># create sample dataframe</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.835275</td>
+      <td>0.181993</td>
+      <td>1.232291</td>
+      <td>-0.996842</td>
+      <td>-0.804238</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.833230</td>
+      <td>0.084046</td>
+      <td>-0.466226</td>
+      <td>-0.458791</td>
+      <td>-0.623695</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.645133</td>
+      <td>-1.851581</td>
+      <td>0.843342</td>
+      <td>1.093867</td>
+      <td>0.456576</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.273131</td>
+      <td>-1.916821</td>
+      <td>0.162999</td>
+      <td>0.920437</td>
+      <td>-0.667275</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.046662</td>
+      <td>-0.613771</td>
+      <td>-0.374934</td>
+      <td>0.516941</td>
+      <td>0.538914</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>-1.207959</td>
+      <td>-0.517363</td>
+      <td>0.597141</td>
+      <td>0.588914</td>
+      <td>-0.872500</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.691405</td>
+      <td>0.009598</td>
+      <td>-0.211532</td>
+      <td>-0.821576</td>
+      <td>0.920173</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>-1.025475</td>
+      <td>0.269079</td>
+      <td>1.641999</td>
+      <td>-1.113975</td>
+      <td>-0.174968</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>-0.787913</td>
+      <td>-0.093945</td>
+      <td>-0.791022</td>
+      <td>-1.639523</td>
+      <td>-1.884071</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>-0.512947</td>
+      <td>0.432264</td>
+      <td>-1.149004</td>
+      <td>0.731894</td>
+      <td>-1.413364</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display only the first 5 rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.835275</td>
+      <td>0.181993</td>
+      <td>1.232291</td>
+      <td>-0.996842</td>
+      <td>-0.804238</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.833230</td>
+      <td>0.084046</td>
+      <td>-0.466226</td>
+      <td>-0.458791</td>
+      <td>-0.623695</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.645133</td>
+      <td>-1.851581</td>
+      <td>0.843342</td>
+      <td>1.093867</td>
+      <td>0.456576</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.273131</td>
+      <td>-1.916821</td>
+      <td>0.162999</td>
+      <td>0.920437</td>
+      <td>-0.667275</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.046662</td>
+      <td>-0.613771</td>
+      <td>-0.374934</td>
+      <td>0.516941</td>
+      <td>0.538914</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="id2">
+<h3>🤖 Try it!<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p><strong>Use the scatter plot function above together with data from the sample dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. Look up the <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code> documentation to add features to your plot.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># play around with scatter plot function</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="using-r-within-a-python-juypter-notebook">
+<h2>Using R within a Python Juypter notebook<a class="headerlink" href="#using-r-within-a-python-juypter-notebook" title="Permalink to this headline">#</a></h2>
+<section id="r-magic">
+<h3>R Magic<a class="headerlink" href="#r-magic" title="Permalink to this headline">#</a></h3>
+<p>To use R within a Python Juypter notebook, which was intitiated using a Python kernel, we need so-called R magic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enables the %%R magic, needs to be installed and then activated only once per Notebook </span>
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we’ve seen before, <code class="docutils literal notranslate"><span class="pre">%</span></code> denotes line magic, while <code class="docutils literal notranslate"><span class="pre">%%</span></code> denotes cell magic. R magic uses the same syntax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">R</span> x &lt;- c(1, 2, 3)
+
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.7003673 , 0.74275081, 0.70928001, 0.56674552, 0.97778533,
+       0.70633485, 0.24791576, 0.15788335, 0.69769852, 0.71995667,
+       0.25774443, 0.34154678, 0.96876117, 0.6945071 , 0.46638326,
+       0.7028127 , 0.51178587, 0.92874137, 0.7397693 , 0.62243903,
+       0.65154547, 0.39680761, 0.54323939, 0.79989953, 0.72154473,
+       0.29536398, 0.16094588, 0.20612551, 0.13432539, 0.48060502,
+       0.34252181, 0.36296929, 0.97291764, 0.11094361, 0.38826409,
+       0.78306588, 0.97289726, 0.48320961, 0.33642111, 0.56741904,
+       0.04794151, 0.38893703, 0.90630365, 0.16101821, 0.74362113,
+       0.63297416, 0.32418002, 0.92237653, 0.23722644, 0.82394557])
+</pre></div>
+</div>
+</div>
+</div>
+<p>R variables can also be used across different cells, as long as you call R magic every time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">R</span> x
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 2., 3.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+x &lt;- append(x, c(5,6,7))
+plot(x)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.1_Jupyter_Introduction_67_0.png" src="_images/1.1_Jupyter_Introduction_67_0.png" />
+</div>
+</div>
+</section>
+<section id="move-variables-from-python-environment-to-r-and-vice-versa">
+<h3>Move variables from Python environment to R, and vice versa<a class="headerlink" href="#move-variables-from-python-environment-to-r-and-vice-versa" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable   Type         Data/Info
+---------------------------------
+N          int          50
+area       ndarray      50: 50 elems, type `float64`, 400 bytes
+colors     ndarray      50: 50 elems, type `float64`, 400 bytes
+df         DataFrame               A         B   &lt;...&gt;n\n[100 rows x 5 columns]
+np         module       &lt;module &#39;numpy&#39; from &#39;/Us&lt;...&gt;kages/numpy/__init__.py&#39;&gt;
+pd         module       &lt;module &#39;pandas&#39; from &#39;/U&lt;...&gt;ages/pandas/__init__.py&#39;&gt;
+plt        module       &lt;module &#39;matplotlib.pyplo&lt;...&gt;es/matplotlib/pyplot.py&#39;&gt;
+title      str          Winterschool 2022
+x          ndarray      50: 50 elems, type `float64`, 400 bytes
+y          ndarray      50: 50 elems, type `float64`, 400 bytes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">Rpush</span> df
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">R</span> df
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.835275</td>
+      <td>0.181993</td>
+      <td>1.232291</td>
+      <td>-0.996842</td>
+      <td>-0.804238</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.833230</td>
+      <td>0.084046</td>
+      <td>-0.466226</td>
+      <td>-0.458791</td>
+      <td>-0.623695</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.645133</td>
+      <td>-1.851581</td>
+      <td>0.843342</td>
+      <td>1.093867</td>
+      <td>0.456576</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.273131</td>
+      <td>-1.916821</td>
+      <td>0.162999</td>
+      <td>0.920437</td>
+      <td>-0.667275</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.046662</td>
+      <td>-0.613771</td>
+      <td>-0.374934</td>
+      <td>0.516941</td>
+      <td>0.538914</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>-1.207959</td>
+      <td>-0.517363</td>
+      <td>0.597141</td>
+      <td>0.588914</td>
+      <td>-0.872500</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.691405</td>
+      <td>0.009598</td>
+      <td>-0.211532</td>
+      <td>-0.821576</td>
+      <td>0.920173</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>-1.025475</td>
+      <td>0.269079</td>
+      <td>1.641999</td>
+      <td>-1.113975</td>
+      <td>-0.174968</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>-0.787913</td>
+      <td>-0.093945</td>
+      <td>-0.791022</td>
+      <td>-1.639523</td>
+      <td>-1.884071</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>-0.512947</td>
+      <td>0.432264</td>
+      <td>-1.149004</td>
+      <td>0.731894</td>
+      <td>-1.413364</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+correlation &lt;- cor(df$A, df$B)
+correlation
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] -0.04536287
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correlation</span> <span class="o">=</span> <span class="o">%</span><span class="k">Rget</span> correlation
+<span class="n">correlation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.04536287])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-new-notebook-using-an-r-kernel">
+<h3>Create a new notebook using an R kernel<a class="headerlink" href="#create-a-new-notebook-using-an-r-kernel" title="Permalink to this headline">#</a></h3>
+<p>See file <code class="docutils literal notranslate"><span class="pre">Winterschool_2022_R_Kernel.ipynb</span></code></p>
+</section>
+</section>
+<section id="practical-example-with-vegetation-data">
+<h2>Practical example with vegetation data<a class="headerlink" href="#practical-example-with-vegetation-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required packages</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1">#for data frames</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> <span class="c1">#for plotting</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="splotopen">
+<h3>sPlotOpen<a class="headerlink" href="#splotopen" title="Permalink to this headline">#</a></h3>
+<p>sPlotOpen (Sabatini et al, 2021) is an open-access and environmentally and spatially balanced subset of the global sPlot vegetation plots data set v2.1 (Bruelheide et al, 2019).</p>
+<p>For future reference, sPlotOpen Data is available at the iDiv Data Repository. For this study we used version 52, which you can download using the following link: <a class="reference external" href="https://idata.idiv.de/ddm/Data/ShowData/3474">https://idata.idiv.de/ddm/Data/ShowData/3474</a></p>
+<p>The data is stored in various tab-separated files:</p>
+<ul class="simple">
+<li><p><strong>sPlotOpen_header(2).txt</strong> : contains information on each plot, such as coordinates, date, biome, country, etc.</p></li>
+<li><p><strong>sPlotOpen_DT(1).txt</strong> : contains information per plot and species with abundance and relative cover</p></li>
+<li><p><strong>sPlotOpen_CWM_CWV(1).txt</strong> : contains information on trait community weighted means and variances for each plot and 18 traits (ln-transformed)</p></li>
+</ul>
+<p>For this example, we will look at the trait community weighted means.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Data/sPlotOpen_CWM_CWV(1).txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>View the first 5 rows of data frame. <strong>Note: All values are in natural logarithm.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PlotObservationID</th>
+      <th>TraitCoverage_cover</th>
+      <th>Species_richness</th>
+      <th>TraitCoverage_pa</th>
+      <th>LeafArea_CWM</th>
+      <th>StemDens_CWM</th>
+      <th>SLA_CWM</th>
+      <th>LeafC_perdrymass_CWM</th>
+      <th>LeafN_CWM</th>
+      <th>LeafP_CWM</th>
+      <th>...</th>
+      <th>Seed_length_CWV</th>
+      <th>LDMC_CWV</th>
+      <th>LeafNperArea_CWV</th>
+      <th>LeafNPratio_CWV</th>
+      <th>Leaf_delta_15N_CWV</th>
+      <th>Seed_num_rep_unit_CWV</th>
+      <th>Leaffreshmass_CWV</th>
+      <th>Stem_cond_dens_CWV</th>
+      <th>Disp_unit_leng_CWV</th>
+      <th>Wood_vessel_length_CWV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16</td>
+      <td>0.277778</td>
+      <td>3</td>
+      <td>0.333333</td>
+      <td>3.678311</td>
+      <td>-1.047293</td>
+      <td>2.890748</td>
+      <td>6.128157</td>
+      <td>2.873263</td>
+      <td>1.114036</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>17</td>
+      <td>0.038462</td>
+      <td>2</td>
+      <td>0.500000</td>
+      <td>3.678311</td>
+      <td>-1.047293</td>
+      <td>2.890748</td>
+      <td>6.128157</td>
+      <td>2.873263</td>
+      <td>1.114036</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18</td>
+      <td>0.047619</td>
+      <td>4</td>
+      <td>0.250000</td>
+      <td>3.678311</td>
+      <td>-1.047293</td>
+      <td>2.890748</td>
+      <td>6.128157</td>
+      <td>2.873263</td>
+      <td>1.114036</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>20</td>
+      <td>0.666667</td>
+      <td>3</td>
+      <td>0.333333</td>
+      <td>3.686063</td>
+      <td>-0.907135</td>
+      <td>2.903715</td>
+      <td>6.136791</td>
+      <td>2.929729</td>
+      <td>0.739181</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>22</td>
+      <td>0.538462</td>
+      <td>7</td>
+      <td>0.571429</td>
+      <td>3.899842</td>
+      <td>-0.900514</td>
+      <td>2.917708</td>
+      <td>6.131968</td>
+      <td>2.955072</td>
+      <td>0.733698</td>
+      <td>...</td>
+      <td>0.011436</td>
+      <td>0.041385</td>
+      <td>0.022313</td>
+      <td>0.017075</td>
+      <td>0.186384</td>
+      <td>1.315851</td>
+      <td>0.306499</td>
+      <td>0.163156</td>
+      <td>0.052239</td>
+      <td>0.002832</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 40 columns</p>
+</div></div></div>
+</div>
+<p>View information on the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cwm</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 95104 entries, 0 to 95103
+Data columns (total 40 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   PlotObservationID       95104 non-null  int64  
+ 1   TraitCoverage_cover     95104 non-null  float64
+ 2   Species_richness        95104 non-null  int64  
+ 3   TraitCoverage_pa        95104 non-null  float64
+ 4   LeafArea_CWM            94622 non-null  float64
+ 5   StemDens_CWM            94622 non-null  float64
+ 6   SLA_CWM                 94622 non-null  float64
+ 7   LeafC_perdrymass_CWM    94622 non-null  float64
+ 8   LeafN_CWM               94622 non-null  float64
+ 9   LeafP_CWM               94622 non-null  float64
+ 10  PlantHeight_CWM         94622 non-null  float64
+ 11  SeedMass_CWM            94622 non-null  float64
+ 12  Seed_length_CWM         94622 non-null  float64
+ 13  LDMC_CWM                94622 non-null  float64
+ 14  LeafNperArea_CWM        94622 non-null  float64
+ 15  LeafNPratio_CWM         94622 non-null  float64
+ 16  Leaf_delta_15N_CWM      94622 non-null  float64
+ 17  Seed_num_rep_unit_CWM   94622 non-null  float64
+ 18  Leaffreshmass_CWM       94622 non-null  float64
+ 19  Stem_cond_dens_CWM      94622 non-null  float64
+ 20  Disp_unit_leng_CWM      94622 non-null  float64
+ 21  Wood_vessel_length_CWM  94622 non-null  float64
+ 22  LeafArea_CWV            92268 non-null  float64
+ 23  StemDens_CWV            92268 non-null  float64
+ 24  SLA_CWV                 92268 non-null  float64
+ 25  LeafC_perdrymass_CWV    92268 non-null  float64
+ 26  LeafN_CWV               92268 non-null  float64
+ 27  LeafP_CWV               92268 non-null  float64
+ 28  PlantHeight_CWV         92268 non-null  float64
+ 29  SeedMass_CWV            92268 non-null  float64
+ 30  Seed_length_CWV         92268 non-null  float64
+ 31  LDMC_CWV                92268 non-null  float64
+ 32  LeafNperArea_CWV        92268 non-null  float64
+ 33  LeafNPratio_CWV         92268 non-null  float64
+ 34  Leaf_delta_15N_CWV      92268 non-null  float64
+ 35  Seed_num_rep_unit_CWV   92268 non-null  float64
+ 36  Leaffreshmass_CWV       92268 non-null  float64
+ 37  Stem_cond_dens_CWV      92268 non-null  float64
+ 38  Disp_unit_leng_CWV      92268 non-null  float64
+ 39  Wood_vessel_length_CWV  92268 non-null  float64
+dtypes: float64(38), int64(2)
+memory usage: 29.0 MB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>🤖 Try it!<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p><strong>Plot histograms of two trait cwm’s you are interested in. <em>Extra credit: Plot both histograms inside one graph.</em></strong></p></li>
+<li><p><strong>Save figure(s) as PDF.</strong></p></li>
+<li><p><strong>Check via your Jupyter notebook if the figure was gererated properly.</strong></p></li>
+<li><p><strong>Plot a scatter plot using one trait x values and another trait on as y values.</strong></p></li>
+<li><p><strong>Calculate Pearson’s correlation coefficient to quantify the linear relationship of trait x and trait y.</strong></p></li>
+</ol>
+<p><em>Extra credit:</em> Try and use the keyboard shortcuts to move around the notebook.
+<em>Note:</em> There are, of course, many different ways to answer these questions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot trait cwm histogramm and export as PDF (give it a unique name!)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check if image was generated properly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot scatterplot of two traits in relation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate Pearson&#39;s correlation coefficient r</span>
+<span class="c1"># Hint 1: Use the pandas function DataFrame.corr() </span>
+<span class="c1"># Hint 2: Subsetting a pandas dataframe works like this: df[[&quot;variable_1&quot;, &quot;variable_2&quot;]]</span>
+<span class="c1"># Or switch over to R using line or cell magic</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="export-your-notebook">
+<h2>Export your notebook<a class="headerlink" href="#export-your-notebook" title="Permalink to this headline">#</a></h2>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Download</span> <span class="pre">as</span></code> at the top left in your Jupyter notebook window. You can download your notebook as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code>, which you could incorporate into your web-documentation, for example</p></li>
+<li><p>as a <code class="docutils literal notranslate"><span class="pre">PDF</span></code></p></li>
+<li><p>in Jupyter notebook format <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code></p></li>
+<li><p>as Python code <code class="docutils literal notranslate"><span class="pre">.py</span></code></p></li>
+</ul>
+<p>and many more.</p>
+<section id="id4">
+<h3>🤖 Try it!<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p><strong>Export this notebook as an html file and view it in your browser.</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="requirements-packages-used-in-session">
+<h2>Requirements / Packages used in session<a class="headerlink" href="#requirements-packages-used-in-session" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">session_info</span>
+<span class="n">session_info</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><details>
+<summary>Click to view session information</summary>
+<pre>
+-----
+matplotlib          3.5.1
+numpy               1.21.5
+pandas              1.4.2
+session_info        1.0.0
+-----
+</pre>
+<details>
+<summary>Click to view modules imported as dependencies</summary>
+<pre>
+PIL                         9.2.0
+appnope                     0.1.3
+asttokens                   NA
+backcall                    0.2.0
+backports                   NA
+cffi                        1.15.1
+cycler                      0.10.0
+cython_runtime              NA
+dateutil                    2.8.2
+debugpy                     1.6.3
+decorator                   5.1.1
+defusedxml                  0.7.1
+entrypoints                 0.4
+executing                   1.2.0
+ipykernel                   6.17.1
+ipython_genutils            0.2.0
+jedi                        0.18.1
+jinja2                      3.1.2
+kiwisolver                  1.4.4
+markupsafe                  2.1.1
+matplotlib_inline           0.1.6
+mpl_toolkits                NA
+packaging                   21.3
+parso                       0.8.3
+pexpect                     4.8.0
+pickleshare                 0.7.5
+pkg_resources               NA
+platformdirs                2.5.2
+prompt_toolkit              3.0.32
+psutil                      5.9.4
+ptyprocess                  0.7.0
+pure_eval                   0.2.2
+pydev_ipython               NA
+pydevconsole                NA
+pydevd                      2.8.0
+pydevd_file_utils           NA
+pydevd_plugins              NA
+pydevd_tracing              NA
+pygments                    2.13.0
+pyparsing                   3.0.9
+pytz                        2022.6
+pytz_deprecation_shim       NA
+rpy2                        3.5.1
+six                         1.16.0
+stack_data                  0.6.0
+tornado                     6.2
+traitlets                   5.5.0
+tzlocal                     NA
+wcwidth                     0.2.5
+zmq                         24.0.1
+</pre>
+</details> <!-- seems like this ends pre, so might as well be explicit -->
+<pre>
+-----
+IPython             8.6.0
+jupyter_client      7.4.4
+jupyter_core        5.0.0
+notebook            6.5.2
+-----
+Python 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:05:16) [Clang 12.0.1 ]
+macOS-11.2-arm64-arm-64bit
+-----
+Session information updated at 2022-11-10 15:58
+</pre>
+</details></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1.2_R_Kernel.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Juypter - The R kernel</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sophie Wolf<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
