@@ -8,6 +8,8 @@ It covers
     2. Practical example of data analysis using Jupyter Notebooks
     3. How to reuse and publish Jupyter code
 
+You can find the whole tutorial as a Jupyter Book here: https://sojwolf.github.io/Jupyter_Workshop_Winterschool_2022
+
 Requirements
 ## R
 - r-base=3.6
