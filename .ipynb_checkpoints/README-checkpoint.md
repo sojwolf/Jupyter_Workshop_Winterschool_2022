@@ -1,4 +1,4 @@
-# Jupyter_Workshop_Winterschool_2022
+# Jupyter Workshop Winterschool 2022
 
 This is an introductory course to Jupyter Notebook / Lab for the gfbio
 Winterschool 2022.
