@@ -32,19 +32,19 @@
 # 
 # You can export your work (e.g. .ipynb file) from a JupyterHub by clicking on File and selecting Download.
 # 
-# <img align="left" src="Figures/download.png" width="900" >
-# 
-# 
-# 
+# ![download](Figures/download.png)
 
 # 
 # **Interesting to know:** There is not only raw file based exports available. Other processed formats include e.g. html or PDF as shown below which can be handy in some cases giving you a nicely readable representation of your research.
 #  
+# ![pdf](Figures/pdf.png)
 # 
-# <img align="left" src="Figures/pdf.png" width="900" >
-# 
-# 
-# 
+
+# In[ ]:
+
+
+
+
 
 # ## Reuse options
 # 
@@ -101,8 +101,7 @@ jupyter lab
 # 
 # That will make the current directory the working directory in JupyterLab and open a browser window that should look familiar to what you have seen at the winter school lessons:
 # 
-# <img align="left" src="Figures/launch.png"  >
-# 
+# ![launch](Figures/launch.png)
 # 
 # One thing you need to do in order to make the scripts work is to install additional python packages which are referenced in the scripts or also install special Jupyter packages which allow to run e.g. R-Code if you wish to do so. You can read the section further down or ask your IT for support. 
 

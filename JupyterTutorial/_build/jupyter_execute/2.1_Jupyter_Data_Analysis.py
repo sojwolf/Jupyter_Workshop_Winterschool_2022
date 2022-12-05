@@ -7,7 +7,7 @@
 # 
 # Wolf, S. and Mahecha, M. D. and Sabatini, F. M. and Wirth, C. and Bruelheide, H. and Kattge, J. and Moreno Martínez, Á. and Mora, K. and Kattenborn, T., **Citizen science plant observations encode global trait patterns**. Nat Ecol Evol (2022). https://doi.org/10.1038/s41559-022-01904-x
 # 
-# The full documentation can found at: https://github.com/sojwolf/iNaturalist_traits
+# The full documentation can found at: https://github.com/sojwolf/iNaturalist_traits. By the way, this is a Jupyter Book, which is a great way to then publish your code and workflow. We will cover how to create and publish a Jupyter Book in the last section of this workshop.
 
 # ## Research question
 
@@ -246,7 +246,7 @@ get_ipython().run_cell_magic('R', '', "\n# Load iNat Data\niNat <- data.table::f
 get_ipython().run_line_magic('R', 'head(iNat)')
 
 
-# In[37]:
+# In[ ]:
 
 
 get_ipython().run_cell_magic('R', '', '\nlibrary(raster)\n\n# get coordinates\nxy <- cbind(iNat$decimalLongitude, iNat$decimalLatitude)\n# raster dimensions 2 degree resolution map\nr2 <- raster(ncols = 180, nrows = 90)\n')
@@ -270,13 +270,11 @@ get_ipython().run_cell_magic('R', '', '\n# export exp(ln()) maps in GeoTiff form
 
 # **a)** Díaz et al. 2016
 # 
-# <img align="left" src="Figures/Diaz_2016_spectrum.png" width="600" >
-# 
+# ![Diaz](Figures/Diaz_2016_spectrum.png)
 
 # **b)** Bruelheide et al. 2018
 # 
-# <img align="left" src="Figures/Bruelheide_2018_spectrum.png" width="600" >
-# 
+# ![Bruelheide](Figures/Bruelheide_2018_spectrum.png)
 
 # In[40]:
 
@@ -334,9 +332,3 @@ get_ipython().run_cell_magic('R', '', '\nbiplot(result,  xlabs = rep(".", nrow(d
 # 
 # **3. This PCA represents the so-called spectrum of plant form and function. Compare your biplot visually to the the previously published versions based a) on only TRY trait data and b) sPlotOpen community data (see figures above).**
 # 
-
-# In[ ]:
-
-
-
-

@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Jupyter Workshop Winterschool 2022
                 </a>
             </li>
         </ul>
@@ -151,6 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="3.1_Reuse_Course_Material.html">
    Reuse of winter school practical course material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.2_Create_Jupyter_Book.html">
+   Publish your workflow as a Jupyter Book
   </a>
  </li>
 </ul>
@@ -204,35 +209,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/2.1_Jupyter_Data_Analysis.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -255,7 +231,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://sojwolf.github.io/Jupyter_Workshop_Winterschool_2022"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -272,7 +248,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2.1_Jupyter_Data_Analysis.html&body=Your%20issue%20content%20here."
+        <a href="https://sojwolf.github.io/Jupyter_Workshop_Winterschool_2022/issues/new?title=Issue%20on%20page%20%2F2.1_Jupyter_Data_Analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -510,7 +486,7 @@ title="Print to PDF"
 <h1>Data Analysis in Jupyter Notebook (Part 2)<a class="headerlink" href="#data-analysis-in-jupyter-notebook-part-2" title="Permalink to this headline">#</a></h1>
 <p>We will reproduce parts of a recent publication:</p>
 <p>Wolf, S. and Mahecha, M. D. and Sabatini, F. M. and Wirth, C. and Bruelheide, H. and Kattge, J. and Moreno Martínez, Á. and Mora, K. and Kattenborn, T., <strong>Citizen science plant observations encode global trait patterns</strong>. Nat Ecol Evol (2022). <a class="reference external" href="https://doi.org/10.1038/s41559-022-01904-x">https://doi.org/10.1038/s41559-022-01904-x</a></p>
-<p>The full documentation can found at: <a class="reference external" href="https://github.com/sojwolf/iNaturalist_traits">https://github.com/sojwolf/iNaturalist_traits</a></p>
+<p>The full documentation can found at: <a class="reference external" href="https://github.com/sojwolf/iNaturalist_traits">https://github.com/sojwolf/iNaturalist_traits</a>. By the way, this is a Jupyter Book, which is a great way to then publish your code and workflow. We will cover how to create and publish a Jupyter Book in the last section of this workshop.</p>
 <section id="research-question">
 <h2>Research question<a class="headerlink" href="#research-question" title="Permalink to this headline">#</a></h2>
 <p>Can we use citizen science plant observations to map plant functional traits on a global scale?</p>
@@ -966,83 +942,6 @@ r2 &lt;- raster(ncols = 180, nrows = 90)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Loading required package: sp
-
-R[write to console]: code for methods in class “Rcpp_SpatCategories” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatCategories” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatDataFrame” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatDataFrame” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatFactor” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatFactor” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatMessages” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatMessages” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatOptions” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatOptions” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRaster” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRaster” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRasterCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRasterCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRasterStack” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatRasterStack” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatSRS” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatSRS” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatTime_v” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatTime_v” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVector” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVector” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVectorCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVectorCollection” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVectorProxy” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpatVectorProxy” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpExtent” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPoly” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPoly” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPolyPart” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPolyPart” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPolygons” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-
-R[write to console]: code for methods in class “Rcpp_SpPolygons” was not checked for suspicious field assignments (recommended package ‘codetools’ not available?)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1109,9 +1008,9 @@ for (i in loop.vector) { # Loop over loop.vector
 <section id="the-global-spectrum-of-plant-form-and-function">
 <h2>The global spectrum of plant form and function<a class="headerlink" href="#the-global-spectrum-of-plant-form-and-function" title="Permalink to this headline">#</a></h2>
 <p><strong>a)</strong> Díaz et al. 2016</p>
-<img align="left" src="Figures/Diaz_2016_spectrum.png" width="600" >
+<p><img alt="Diaz" src="_images/Diaz_2016_spectrum.png" /></p>
 <p><strong>b)</strong> Bruelheide et al. 2018</p>
-<img align="left" src="Figures/Bruelheide_2018_spectrum.png" width="600" >
+<p><img alt="Bruelheide" src="_images/Bruelheide_2018_spectrum.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>

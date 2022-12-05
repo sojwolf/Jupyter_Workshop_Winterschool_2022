@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Publish your workflow as a Jupyter Book" href="3.2_Create_Jupyter_Book.html" />
     <link rel="prev" title="Additional Materials" href="2.2_Additional_Materials.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -103,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Jupyter Workshop Winterschool 2022
                 </a>
             </li>
         </ul>
@@ -150,6 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Reuse of winter school practical course material
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.2_Create_Jupyter_Book.html">
+   Publish your workflow as a Jupyter Book
   </a>
  </li>
 </ul>
@@ -203,35 +209,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/3.1_Reuse_Course_Material.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -254,7 +231,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://sojwolf.github.io/Jupyter_Workshop_Winterschool_2022"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -271,7 +248,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.1_Reuse_Course_Material.html&body=Your%20issue%20content%20here."
+        <a href="https://sojwolf.github.io/Jupyter_Workshop_Winterschool_2022/issues/new?title=Issue%20on%20page%20%2F3.1_Reuse_Course_Material.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -530,9 +507,9 @@ title="Print to PDF"
 <p><a class="reference external" href="https://syncandshare.desy.de/index.php/s/tTLLCnzbtCCpHot">https://syncandshare.desy.de/index.php/s/tTLLCnzbtCCpHot</a></p>
 <p>That is already nice you might say. However all above gets you only the original workshop files without your modifications. So let’s see how you can preserve and work on with your own files.</p>
 <p>You can export your work (e.g. .ipynb file) from a JupyterHub by clicking on File and selecting Download.</p>
-<img align="left" src="Figures/download.png" width="900" >
+<p><img alt="download" src="_images/download.png" /></p>
 <p><strong>Interesting to know:</strong> There is not only raw file based exports available. Other processed formats include e.g. html or PDF as shown below which can be handy in some cases giving you a nicely readable representation of your research.</p>
-<img align="left" src="Figures/pdf.png" width="900" >
+<p><img alt="pdf" src="_images/pdf.png" /></p>
 </section>
 <section id="reuse-options">
 <h2>Reuse options<a class="headerlink" href="#reuse-options" title="Permalink to this headline">#</a></h2>
@@ -575,7 +552,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>That will make the current directory the working directory in JupyterLab and open a browser window that should look familiar to what you have seen at the winter school lessons:</p>
-<img align="left" src="Figures/launch.png"  >
+<p><img alt="launch" src="_images/launch.png" /></p>
 <p>One thing you need to do in order to make the scripts work is to install additional python packages which are referenced in the scripts or also install special Jupyter packages which allow to run e.g. R-Code if you wish to do so. You can read the section further down or ask your IT for support.</p>
 </section>
 </section>
@@ -673,6 +650,13 @@ dependencies:
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Additional Materials</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="3.2_Create_Jupyter_Book.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publish your workflow as a Jupyter Book</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

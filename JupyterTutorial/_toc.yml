@@ -15,4 +15,4 @@ parts:
   - caption: Documentation and reusing material 
     chapters:
     - file: 3.1_Reuse_Course_Material
-   # - file: 3.2_Create_Jupyter_Book
+    - file: 3.2_Create_Jupyter_Book
